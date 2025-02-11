@@ -40,7 +40,7 @@
   }
 
 body {
-    background-color: grey;
+    background-color: #b2b2b2;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -48,7 +48,7 @@ body {
     display: flex;
     align-items: center;
     background-color: #588c7e;
-    background: linear-gradient(160deg, #588c7e 60%, grey 50%);
+    background: linear-gradient(160deg, #588c7e 60%, #b2b2b2 60%);
     padding: 100px;
 }
 
@@ -56,6 +56,10 @@ body {
   background-color:  #f0f0f0;
   padding: 100px 10px;
   position: relative;
+}
+
+.about, .portrait {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .logo {
@@ -68,4 +72,51 @@ body {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+main {
+  padding: 50px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  width: 250px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.placeholder {
+  width: 250px;
+  height: 150px;
+  background-color: red;
+}
+
+.cardContent {
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
+.projectTitle {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.links {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  gap: 5px;
+}
+
+main .logo {
+  width: 25px;
 }
