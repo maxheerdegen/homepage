@@ -39,27 +39,41 @@
     isolation: isolate;
   }
 
+
+:root  {
+  --header-bg-color: #588c7e;
+  --text-bg-color: #f0f0f0;
+  --main-bg-color: #b2b2b2;
+}
+
 body {
-    background-color: #b2b2b2;
+    background-color: var(--main-bg-color);
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .top {
     display: flex;
     align-items: center;
-    background-color: #588c7e;
-    background: linear-gradient(160deg, #588c7e 60%, #b2b2b2 60%);
-    padding: 100px;
+    justify-content: center;
+    background-color: var(--header-bg-color);
+    background: linear-gradient(170deg, var(--header-bg-color) 60%, var(--main-bg-color) 60%);
+    padding: 100px 200px;
+    width: 100%;
 }
 
 .about {
-  background-color:  #f0f0f0;
+  background-color: var(--text-bg-color);
   padding: 100px 10px;
   position: relative;
+  max-width: 800px;
 }
 
 .about, .portrait {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ 
 }
 
 .logo {
@@ -68,14 +82,15 @@ body {
 
 .logos {
   display: flex;
-  gap: 5px;
   position: absolute;
+  gap: 5px;
   bottom: 10px;
   right: 10px;
 }
 
 main {
-  padding: 50px;
+  padding: 50px 200px;
+  margin: 50px 0px;
 }
 
 h2 {
@@ -84,24 +99,27 @@ h2 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(300px, 100%/4)), 1fr));
   gap: 50px;
+  max-width: 1500px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-  width: 250px;
   position: relative;
+  max-width: 300px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .placeholder {
-  width: 250px;
+  width: 100%;
   height: 150px;
-  background-color: red;
+  background-color: var(--header-bg-color)
 }
 
 .cardContent {
-  background-color: #f0f0f0;
+  background-color: var(--text-bg-color);
   padding: 5px;
 }
 
@@ -119,4 +137,42 @@ h2 {
 
 main .logo {
   width: 25px;
+}
+
+.mail, .phone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--header-bg-color);
+  padding: 100px 200px;
+  gap: 100px;
+  width: 100%;
+
+}
+
+.contact {
+  position: relative;
+  color: var(--text-bg-color);
+}
+
+.address {
+  margin: 30px 0px
+}
+
+.mail .logo,
+.phone .logo {
+  width: 25px;
+  filter: invert(100%) sepia(30%) saturate(67%) hue-rotate(167deg) brightness(110%) contrast(88%);
+}
+
+.contact .logos {
+  position: absolute;
+  bottom: -60px;
+  left: 0px;
 }
